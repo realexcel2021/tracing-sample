@@ -12,7 +12,7 @@ const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api');
 diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 
 const exporterOptions = {
-url: 'http://otel-opentelemetry-collector.monitoring.svc.cluster.local:4317/v1/traces'
+url: 'http://otel-opentelemetry-collector.monitoring.svc.cluster.local:4317'
 }
 
 const traceExporter = new OTLPTraceExporter(exporterOptions);
