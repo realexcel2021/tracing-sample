@@ -7,6 +7,9 @@ const opentelemetry = require('@opentelemetry/sdk-node');
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
 const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
+const { diag, DiagConsoleLogger, DiagLogLevel } = require('@opentelemetry/api');
+
+diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 
 const exporterOptions = {
 url: 'http://otel-opentelemetry-collector.monitoring.svc.cluster.local:4317/v1/traces'
